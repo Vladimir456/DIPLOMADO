@@ -1,4 +1,4 @@
-import express from 'express'; //"type":"module", (para que funcione las importaciones)
+import express from 'express'; 
 import morgan from 'morgan';
 import { authenticateToken } from './middlewares/authenticate.middleware.js';
 //routes
@@ -8,11 +8,9 @@ import tasksRoutes from './routes/tasks.routes.js';
 
 const app = express();
 
-//Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
 
-//routes
 app.use('/api/login', authRoutes);
 app.use('/api/users',usersRoutes);
 app.use('/api/tasks', authenticateToken, tasksRoutes);

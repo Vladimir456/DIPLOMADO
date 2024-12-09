@@ -47,15 +47,6 @@ password: {
 User.hasMany(Task);
 Task.belongsTo(User);
 
-// User.hasMany(Task, {
-//     foreignKey: 'user_Id',
-//     sourceKey: 'id'
-// });
-
-// Task.belongsTo(User, {
-//     foreignKey: 'user_Id',
-//     targetKey: 'id'
-// });
 User.beforeCreate(async (user) => {
     try {
         user.password = await encriptar (user.password);
