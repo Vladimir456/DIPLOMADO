@@ -10,7 +10,7 @@ const sequelize = new Sequelize(
     dialect: process.env.DB_DIALECT, // or 'mysql' or 'postgres'
     logging: console.log, // set to true for logging DB queries
 
-    //PARAQUE FUNCIONE EN RENDER y PARA QUE FUNCIONE EN MODO LOCAL COMENTAR TODO EL DIALECT
+    //PARAQUE FUNCIONE RENDER 
     dialectOptions: {
         ssl:{
             require: true,
